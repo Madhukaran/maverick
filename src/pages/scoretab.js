@@ -1,8 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Table from "@/components/table";
-
-
 export default function scoretab() {
   const router = useRouter();
   const formData = router.query;
