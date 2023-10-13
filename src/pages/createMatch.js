@@ -1,6 +1,27 @@
-import React from 'react';
+import React,{useState} from 'react';
+import Router from 'next/router';
 
 export default function CreateMatch() {
+    const [formData, setFormData] = useState({});
+    
+
+    const handlesubmit=(e)=> {
+        e.preventDefault();
+               console.log(formData);
+        Router.push({
+            pathname: '/scoretab',
+            query: formData,
+        });
+    }
+    const handleInputChange = (event) => {
+        const { target } = event;
+        const { name, value } = target;
+    
+        setFormData({
+          ...formData, // Keep existing form data
+          [name]: value // Update form data for the input field that changed
+        });
+      }
     return (
         <>
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -11,18 +32,18 @@ export default function CreateMatch() {
                 </div>
 
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                    <form className="space-y-6" action="#" method="POST">
+                    <form className="space-y-6" action="#" method="POST" onSubmit={handlesubmit}>
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium leading-6 text-white">
+                            <label htmlFor="team1" className="block text-sm font-medium leading-6 text-white">
                                 Team Name 1
                             </label>
                             <div className="mt-2">
                                 <input
-                                    id="email"
-                                    name="email"
+                                    id="team1"
+                                    name="team1"
                                     type="text"
-                                    autoComplete="email"
                                     required
+                                    onChange={handleInputChange}
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 />
                             </div>
@@ -30,16 +51,16 @@ export default function CreateMatch() {
 
                         <div>
                             <div className="flex items-center justify-between">
-                                <label htmlFor="password" className="block text-sm font-medium leading-6 text-White">
+                                <label htmlFor="team2" className="block text-sm font-medium leading-6 text-White">
                                     Team Name 2
                                 </label>
                             </div>
                             <div className="mt-2">
                                 <input
-                                    id="password"
-                                    name="password"
+                                    id="team2"
+                                    name="team2"
                                     type="text"
-                                    autoComplete="current-password"
+                                    onChange={handleInputChange}
                                     required
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 />
@@ -57,6 +78,7 @@ export default function CreateMatch() {
                                     id="Overs"
                                     name="Overs"
                                     type="number"
+                                    onChange={handleInputChange}
                                     autoComplete="current-password"
                                     required
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"

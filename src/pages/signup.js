@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Input from "../components/input";
 import Button from "@/components/button";
@@ -85,16 +86,10 @@ export default function Signup(props) {
                             Start a 14 day free trial
                         </a>
                     </p>
-                        Signup
-                    </h2>
+                       
+                    
                 </div>
-                <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                    <form className="space-y-6" action="#" method="POST">
-                        <Input name="Mobile Number" />
-                        <Input name="Name" />
-                        <Button name="Let&apos;s Rock" />
-                    </form>
-                </div>
+               
             </div>
         </>
     )
