@@ -14,10 +14,10 @@ export default function Table(props) {
               B
             </th>
             <th scope="col" className="px-6 py-4">
-              4's
+              4&apos;s
             </th>
             <th scope="col" className="px-6 py-4">
-              6's
+              6&apos;s
             </th>
             <th scope="col" className="px-6 py-4">
               SR

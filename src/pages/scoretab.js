@@ -1,10 +1,11 @@
 import React from "react";
-import { useRouter } from "next/router";
+//import { useRouter } from "next/router";
 import Table from "@/components/table";
 export default function scoretab() {
-  const router = useRouter();
-  const formData = router.query;
-  console.log(formData);
+//  const router = useRouter()
+ // const formData = router.query;
+
+ // console.log(formData);
   const handlesubmit = (e) => {};
   const handleInputChange = (e) => {};
   return (
