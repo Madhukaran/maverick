@@ -16,6 +16,18 @@ export default function Home() {
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-between">
+            <div class="fixed top-2 left-2 z-50">
+                <button onClick={() => router.push("/feed")} class="text-white italic px-2 py-1 rounded shadow-md">
+                    Feeds
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="h-5 w-5 inline-block mr-1 align-text-top text-indigo-600">
+                        <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                            <path d="M10 25h20M30 15l10 10-10 10" />
+                            <path d="M20 35h20M40 25l10 10-10 10" transform="translate(0 -10)" />
+                        </g>
+                    </svg>
+
+                </button>
+            </div>
             <div className="flex grow">
                 {View}
             </div>
